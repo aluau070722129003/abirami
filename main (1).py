@@ -1,35 +1,26 @@
-year=2023
+# 1.1 Implement a recursive function to calculate the factorial of a given number
 
-# To get year (integer input) from the user
+def recur_factorial(n):  
 
-# year = int(input("Enter a year: "))
+   if n == 1:  
 
+       return n  
 
+   else:  
 
-# divided by 100 means century year (ending with 00)
+       return n*recur_factorial(n-1)   
 
-# century year divided by 400 is leap year
+num = int(input("Enter a number: "))  
+  
 
-if (year % 400 == 0) and (year % 100 == 0):
+if num < 0:  
 
-    print("{0} is a leap year".format(year))
+   print("Sorry, factorial does not exist for negative numbers")  
 
+elif num == 0:  
 
+   print("The factorial of 0 is 1")  
 
-# not divided by 100 means not a century year
+else:  
 
-# year divided by 4 is a leap year
-
-elif (year % 4 ==0) and (year % 100 != 0):
-
-    print("{0} is a leap year".format(year))
-
-
-
-# if not divided by both 400 (century year) and 4 (not century year)
-
-# year is not leap year
-
-else:
-
-    print("{0} is not a leap year".format(year))
+   print("The factorial of",num,"is",recur_factorial(num))
